@@ -1,7 +1,7 @@
 # DICOM-Node-Query-Retrival
-This repository contains implementation of DICOM Query/Retrieve (Q/R) node and DICOM Q/R store node. DICOM Q/R node performs C-FIND operation to search PACS for some DICOM studies & get their attributes (e.g., Study Date, Study Description, etc.). After that, it performs C-MOVE operation to retrieve studies based on the attributes returned by C-FIND. 
+This repository contains an implementation of DICOM Q/R store node. The node stores Mammography (MG) images sent from PACS. The process is as the following. 
 
-When C- MOVE is performed, PACS will send the studies to DICOM Q/R store node. The store node will get these studies & save them. Currently, both nodes only support Mammography (MG) modality.
+PACS should have some rules to sent new MG studies to the store node. The node then will receive & store them in the server running the node. The steps to run the node are explained in [Requirements](##Requirements) section. Details of the node & location where studies are saves are illustrated in [Q/R Store Node Parameters](##Q/R-Store-Node-Parameters) section.
 
 ## Requirements
 The code depends on Anaconda version 4.8.3 and Python 3.8. Other versions of Anaconda might work as well because the code uses some of the basic Python modules (e.g., os, datetime, argparse, etc.). Other dependencies are listed in the requirements file.
